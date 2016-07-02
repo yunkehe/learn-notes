@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>learn less</title>
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap.min.css">
+
+	<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" type="text/css" href="styles/style.css">
+</head>
+<body>
+	<!-- 导航条 -->
+	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse">
+	<!-- <nav class="navbar navbar-default navbar-static-top"> -->
+		<div class="container-fluid">
+			<!-- 品牌图标 -->
+			<div class="navbar-header">
+				<a href="#" class="navbar-brand">
+					<img src="images/hk2.png" style="width: 42px;height: 42px;position: relative;top: -11px;" />
+				</a>
+			</div>
+		    <ul class="nav navbar-nav">
+		    	<li class="active"><a href="#">link <span class="sr-only"></span></a></li>
+		    	<li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button">link <span class="caret"></span></a>
+		    	    <ul class="dropdown-menu" role="menu">
+		    	    	<li><a href="#">一</a></li>
+		    	    	<li><a href="#">一</a></li>
+		    	    </ul>
+		    	</li>
+		    </ul>
+		    <form class="navbar-form navbar-left" role="search">
+		    	<div class="form-group">
+		    		<input type="text" class="form-control" placeholder="search" />
+		    	</div>
+		    	<button class="btn btn-default" type="submit">submit</button>
+		    </form>
+
+		    <button class="navbar-btn btn btn-defalut navbar-right">Sign in</button>
+		    <p class="navbar-text navbar-right">欢迎来到 <a href="#" class="navbar-link">heke</a> 的网站！</p>
+		</div>
+	</nav>	
+    <p>hello heke</p>
+    <h3>面包屑导航</h3>
+    <div class="container-fluid">
+    	<ol class="breadcrumb">
+    		<li><a href="#">极客学院</a></li>
+    		<li><a href="#">前端开发</a></li>
+    		<li><a href="#">bootstrap</a></li>
+    		<li class="active">组件</li>
+    	</ol>
+    </div>
+</body>
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="http://cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
+
+<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+<script src="http://cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+
+</html>
