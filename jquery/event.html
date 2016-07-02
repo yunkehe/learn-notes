@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+    <h4>stopPropagation和stopImmediatePropagation的区别</h4>
+    <p>stopImmediatePropagation 阻止该元素绑定的其他事件</p>
+    <div id="test-box">
+		<button id="test-btn">click me</button>
+    </div>
+</body>
+<script type="text/javascript" src="lib/jquery.min.js"></script>
+<script type="text/javascript">
+    function handler1(e){
+    	e.stopPropagation()
+    	e.stopImmediatePropagation()
+    	alert("handler1");
+    }
+
+    function handler2(e){
+    	e.stopPropagation()
+    	alert("handler2");
+    }
+
+    function boxhandler(e){
+    	alert("boxhandler");
+    }
+
+	// 阻止事件冒泡
+    $("#test-box").bind("click", boxhandler);
+    $("#test-btn").bind("click", handler1);
+    $("#test-btn").bind("click", handler2);
+</script>
+</html>
