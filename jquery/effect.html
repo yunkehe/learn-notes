@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>隐藏显示效果</title>
+    <link rel="stylesheet" type="text/css" href="styles/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+    <script type="text/javascript" src="lib/jquery.min.js"></script>
+    
+</head>
+<body>
+    <div class="container">
+
+        <h4>1. 添加多个div到文档中优化</h4>
+        <p>源代码</p>
+        <code>
+            for( var i=0; i<5; i++){
+                $("&lt;div>&gt;").appendTo(document.body)
+            }
+        </code>
+        <p>优化</p>
+        <code>
+            var s = "&lt;div&gt;&lt;/div>&gt;";
+            for( var i=0; i<5; i++){
+                s += s;
+            }
+            $(s).appendTo(document.body)
+        </code>
+        
+        <h4>2. script标签反正body之后, 浏览器（firefox,chrome）DOM结构中, 仍然在body之内</h4>
+        <h4>3. fadeTo的使用</h4>
+        <p>
+        <code>
+            $("#to").on("click", function(){
+                $(this).fadeTo(1000, 0.5);
+            })
+        </code>
+        </p>
+        <br>
+        <div id="to"></div>
+    </div>
+</body>
+<script type="text/javascript">
+    $(function(){
+
+    var   s = "<div></div>", d="";
+    for(var i=0; i<5;i++){
+        d += s;
+    }
+    console.log(d);
+    $(d).appendTo(document.body);
+
+    $("#to").on("click", function(){
+        $(this).fadeTo(1000, 0.5);
+    })
+})
+</script>
+</html>
