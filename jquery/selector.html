@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>遍历</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css">
+</head>
+<body>
+    <h4>parent, parents, parentsUntil</h4>
+    <p>
+      parentsUntil, 直到匹配元素之间的父级元素，不包括匹配的元素。
+    </p>
+    <div id="div1">
+       <div id="div2">
+           <div id="div3">
+               <a href="#">hello</a>
+           </div>
+       </div>
+    </div>
+</body>
+<script type="text/javascript" src="lib/jquery.min.js"></script>
+<script type="text/javascript">
+    $("a").parentsUntil("#div1").css("border", "1px solid blue");
+    
+</script>
+</html>
