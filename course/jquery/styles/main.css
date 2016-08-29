@@ -1,0 +1,28 @@
+
+body{
+    font-family:"Microsoft Yahei";
+}
+#to{
+	width: 100px;
+	height: 100px;
+	background-color: #ff0000;
+}
+
+#div1{
+	width: 200px;
+	height: 200px;
+	border: 1px solid #FF8700;
+	margin:10px 0 0 10px;
+}
+#div2{
+	width: 150px;
+	height: 150px;
+	border: 1px solid #FF8700;
+	margin:10px 0 0 10px;
+}
+#div3{
+	width: 100px;
+	height: 100px;
+	border: 1px solid #FF8700;
+	margin:10px 0 0 10px;
+}
