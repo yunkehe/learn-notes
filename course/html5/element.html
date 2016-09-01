@@ -21,5 +21,44 @@
 	<time datetime="2015-10-10">2015-10-10</time>
 	<time datetime="2015-10-10T">2015-10-10</time>
 	<time datetime="2015-10-10Z">2015-10-10</time>
+	<h4>表单属性</h4>
+	<form id="user-info" action="">
+		<label id="label" for="input1"></label>
+		<input id="input1" type="text" required=""></input>
+		<input type="submit" name="s1" value="s1" formaction="localhost:9000/test"></input>
+		<input type="submit" name="s2" value="s2" formaction="localhost:9000/index"></input>
+		<button type="submit">提交</button>
+	</form>
+
+	<br>
+	<textarea form="user-info" autofocus=""></textarea>
+	<button id="submit-btn">设置默认值</button>
+
+	<h4>datalist</h4>
+	<form>
+		<input type="text" name="greeting" autocomplete="" list="greetings" />
+		<datalist id="greetings">
+			<option value="HTML5学习">HTML5学习</option>
+			<option value="Android学习">Android学习</option>
+			<option value="iOS学习">iOS学习</option>
+		</datalist>
+	</form>
+	<h4>indeterminate</h4>
+	<input type="checkbox" indeterminate id="cb"></input>
 </body>
+<script type="text/javascript">
+	var submit_btn = document.getElementById("submit-btn"),
+		label = document.getElementById("label"),
+		cb = document.getElementById("cb");
+
+	cb.indeterminate = true;
+
+	function setDefaultValue(e){
+		label.control.value = "默认值";
+		console.log("label.control", label.control)
+	};
+
+	submit_btn.addEventListener("click", setDefaultValue)
+
+</script>
 </html>
