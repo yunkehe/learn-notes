@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>range对象</title>
+</head>
+<body>
+	<p id="test-range-text" style="background-color: skyblue;height: 100px;">测试选取的range内容,Lorem ipsum dolor sit amet, consectetur adipisicing elit. Magnam reiciendis fugit autem nisi consectetur, qui reprehenderit ratione soluta earum hic saepe voluptatibus, doloribus debitis aspernatur exercitationem ducimus nemo maiores nesciunt.</p>
+	<button id="btn">获取选中内容</button>
+	<div id="show-range-box"></div>
+	<button id="del-btn" flag="1">删除内容</button>
+	<button id="del-ele-btn" flag="">删除元素</button>
+</body>
+<script type="text/javascript">
+	function getRangeText() {
+		var selection = document.getSelection();
+		var text = [];
+
+		if(selection.rangeCount > 0){
+			for(var i=0, len=selection.rangeCount; i<len; i++){
+				var range = selection.getRangeAt(i);
+				text.push(range);
+			};
+		};
+
+		console.log("range text: ", text);
+		return text;
+	};
+
+	function showRangeText(){
+		var container = showRangeBox;
+		var text = getRangeText();
+
+		text.forEach(function(v, i){
+			container.innerHTML = container.innerHTML + "<li>"+v+"<li>";
+		})
+	};
+
+	// 删除rangeObj
+	function delContents(e){
+		var target = e.target;
+		var flag = target.getAttribute("flag");
+
+		var rangeObj = document.createRange();
+		
+		if(!!flag){
+			rangeObj.selectNodeContents(testNode);
+		}else{
+			rangeObj.selectNode(testNode);
+		}
+
+		rangeObj.deleteContents();
+	};
+
+	var btn = document.getElementById("btn"),
+		delBtn = document.getElementById("del-btn"),
+		delEleBtn = document.getElementById("del-ele-btn"),
+		showRangeBox = document.getElementById("show-range-box"),
+		testNode = document.getElementById("test-range-text");
+
+	btn.onclick = showRangeText;
+	delBtn.onclick = delContents;
+	delEleBtn.onclick = delContents;
+
+</script>
+</html>
