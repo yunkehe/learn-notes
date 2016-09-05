@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>range对象2</title>
+</head>
+<body>
+	<p id="p1" style="border: 1px solid skyblue;height: 100px;">这是用来测试的内容 <br></p>
+	<p id="p2" style="border: 1px solid skyblue;height: 100px;"></p>
+	<button id="clone-btn">clone</button>
+	<button id="clone-contents-btn">clone内容</button>
+	<button id="move-btn" flag="move">移动元素</button>
+	<button id="insert-btn">被移动的按钮</button>
+</body>
+<script type="text/javascript">
+	// 克隆
+	function cloneRange() {
+		var rangeObj = document.createRange();
+		rangeObj.selectNodeContents(p1);
+
+		var cloneRangeObj = rangeObj.cloneRange()
+		console.log("cloneRangeObj.toString(): ", cloneRangeObj.toString());
+	};
+
+	function cloneContents() {
+		var rangeObj = document.createRange();
+		rangeObj.selectNodeContents(p1);
+
+		var cloneContentsObj = rangeObj.cloneContents();
+		// console.log("c", cloneContentsObj)
+		p1.appendChild(cloneContentsObj);
+	};
+
+	function doSomething(e){
+		var target = e.currentTarget;
+
+		var flag = target.getAttribute("flag");
+
+		var rangeObj = document.createRange();
+		rangeObj.selectNodeContents(p1);
+	
+		switch(flag){
+			case "move": move();
+				break;
+		};
+
+
+		function move(){
+			var frag = rangeObj.extractContents();
+			p2.appendChild(frag);
+		}
+	};
+
+	// insertNode
+	function insertElement(){
+		var selection = document.getSelection();
+
+		if(selection.rangeCount > 0){
+			var rangeObj = selection.getRangeAt(0);
+			rangeObj.insertNode(insertBtn);
+		};
+	};
+
+	var p1 = document.getElementById("p1"),
+		p2 = document.getElementById("p2"),
+		cloneBtn = document.getElementById("clone-btn");
+		cloneContentsBtn = document.getElementById("clone-contents-btn"),
+		moveBtn = document.getElementById("move-btn"),
+		insertBtn = document.getElementById("insert-btn");
+
+	cloneBtn.onclick = cloneRange;
+	cloneContentsBtn.onclick = cloneContents;
+	moveBtn.onclick = doSomething;
+
+	p1.onmousedown = insertElement;
+</script>
+</html>
