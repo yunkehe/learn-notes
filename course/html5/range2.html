@@ -5,12 +5,13 @@
 	<title>range对象2</title>
 </head>
 <body>
-	<p id="p1" style="border: 1px solid skyblue;height: 100px;">这是用来测试的内容 <br></p>
+	<p id="p1" style="border: 1px solid skyblue;height: 100px;">这是用来测试<b id="bold-text">加粗</b>的内容，位置。 <br></p>
 	<p id="p2" style="border: 1px solid skyblue;height: 100px;"></p>
 	<button id="clone-btn">clone</button>
 	<button id="clone-contents-btn">clone内容</button>
 	<button id="move-btn" flag="move">移动元素</button>
 	<button id="insert-btn">被移动的按钮</button>
+	<button id="pos-btn">测试位置</button>
 </body>
 <script type="text/javascript">
 	// 克隆
@@ -61,16 +62,37 @@
 		};
 	};
 
+	// 判断位置
+	function checkPosition(){
+		var rangeObj = document.createRange();
+		rangeObj.selectNodeContents(boldText.firstChild);
+		var selection = document.getSelection();
+
+		if(selection.rangeCount > 0){
+			var selRange = selection.getRangeAt(0);
+			if(selRange.compareBoundaryPoints(Range.START_TO_END, rangeObj) < 0){
+				alert("选择的文字在bold之前!");
+			}else{
+				if(selRange.compareBoundaryPoints(Range.END_TO_START, rangeObj) > 0){
+					alert("选择的文字在bold之后!");
+				}
+			}
+		}
+	};
+
 	var p1 = document.getElementById("p1"),
 		p2 = document.getElementById("p2"),
 		cloneBtn = document.getElementById("clone-btn");
 		cloneContentsBtn = document.getElementById("clone-contents-btn"),
 		moveBtn = document.getElementById("move-btn"),
-		insertBtn = document.getElementById("insert-btn");
+		insertBtn = document.getElementById("insert-btn"),
+		posBtn = document.getElementById("pos-btn"),
+		boldText = document.getElementById("bold-text");
 
 	cloneBtn.onclick = cloneRange;
 	cloneContentsBtn.onclick = cloneContents;
 	moveBtn.onclick = doSomething;
+	posBtn.onclick = checkPosition;
 
 	p1.onmousedown = insertElement;
 </script>
