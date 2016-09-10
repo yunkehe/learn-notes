@@ -45,6 +45,38 @@ function drawRect(){
 	ctx.fillRect(0, 0, 100, 100);
 }
 
+// 渐变
+function drawGradient(isRadial) {
+	// 渐变方向
+	var gradient = isRadial ? ctx.createRadialGradient(0, 200, 0, 0, 200, 400) : ctx.createLinearGradient(0, 0, 150, 100);
+
+	gradient.addColorStop(0, "black");
+	gradient.addColorStop(0.5, "red");
+	gradient.addColorStop(1, "blue");
+
+	ctx.fillStyle = gradient;
+	ctx.fillRect(0, 0, 300, 300);
+}
+
+// 绘制变形图形
+function drawTransfer(){
+	ctx.fillStyle = "#eeeeef";
+	ctx.fillRect(0, 0, 500, 0);
+
+	ctx.translate(200, 50);
+	ctx.fillStyle = "rgba(255, 0, 0, 0.25)";
+
+	for(var i=0; i<50; i++){
+		ctx.translate(25, 25);
+		ctx.scale(0.95, 0.95);
+		ctx.rotate(Math.PI/10);
+		ctx.fillRect(0, 0, 100, 50);
+	}
+
+}
+
 createCanvas("canvas-container");
 // drawRect();
-drawM();
+// drawM();
+// drawGradient(1);
+drawTransfer();
