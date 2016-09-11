@@ -75,8 +75,42 @@ function drawTransfer(){
 
 }
 
+// 五角星
+function draw5Star(){
+
+	ctx.translate(100, 100);
+	ctx.beginPath();
+	ctx.fillStyle = "#f00";
+	// ctx.moveTo(100, 100);
+
+	// ctx.lineTo(100, 200);
+	// ctx.lineTo(200, 200);
+	// ctx.lineTo(100, 100);
+
+	
+
+	var dx = 100,
+		dy = 0,
+		s = 50;
+	var dig = Math.PI/5*4;
+
+	for(var i=0; i<5; i++){
+		var x = Math.sin(i*dig),
+			y = Math.cos(i*dig);
+
+		ctx.lineTo(dx+x*s, dy+y*s);
+	}
+
+	ctx.stroke();
+	// ctx.fill();
+	ctx.closePath();
+
+};
+
+
 createCanvas("canvas-container");
 // drawRect();
 // drawM();
 // drawGradient(1);
-drawTransfer();
+// drawTransfer();
+draw5Star();
