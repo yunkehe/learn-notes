@@ -86,9 +86,6 @@ function draw5Star(){
 	// ctx.lineTo(100, 200);
 	// ctx.lineTo(200, 200);
 	// ctx.lineTo(100, 100);
-
-	
-
 	var dx = 100,
 		dy = 0,
 		s = 50;
@@ -107,10 +104,21 @@ function draw5Star(){
 
 };
 
+// 绘制图形
+function drawImage(){
+	var img = new Image();
+	img.src = "../../images/html5.jpg";
+
+	// console.log("img", img)
+	img.onload = function(){
+		ctx.drawImage(img, 20, 20);
+	}
+}
 
 createCanvas("canvas-container");
 // drawRect();
 // drawM();
 // drawGradient(1);
 // drawTransfer();
-draw5Star();
+// draw5Star();
+drawImage();
