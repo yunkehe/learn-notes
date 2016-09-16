@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>web workers</title>
+</head>
+<body>
+	<div id="div">0</div>
+	<button id="start">开始</button>
+	<button id="stop">结束</button>
+</body>
+<script type="text/javascript">
+	var div = document.getElementById("div"),
+		startBtn = document.getElementById("start"),
+		stopBtn = document.getElementById("stop");
+
+	var work = null;
+
+	startBtn.onclick = start;
+	stopBtn.onclick = stop;
+
+	function start() {
+		if(work){
+			return;
+		}
+
+		work = new Worker("app/workers.js");
+
+		var num = parseInt(div.innerHTML);
+		work.postMessage(num);
+
+		work.onmessage = function(e){
+			console.log("e: ", e.data);
+			div.innerHTML = e.data;
+		};
+	};
+
+	function stop(){
+		if(work){
+			work.terminate();
+			work = null;
+		}
+	}
+
+</script>
+</html>
