@@ -1,0 +1,30 @@
+div{
+	width: 100px;
+	height: 100px;
+	background-color: skyblue;
+}
+.line{
+	width: 200px;
+	height: 2px;
+	background-color: #666;
+}
+/* 移动 */
+.div2{
+	-webkit-transform: translate(100px, 100px);
+	 -ms-transform: translate(100px, 100px);
+	 -o-transform: translate(100px, 100px);
+	 transform: translate(100px, 100px); 
+}
+.div2{
+	-webkit-transform: rotate(165deg);
+	-ms-transform: rotate(165deg);
+	-o-transform: rotate(165deg);
+	transform: rotate(165deg);
+}
+.div2{
+	background: gold; 
+	-webkit-transform: skewX(-30deg, 60deg);
+	-ms-transform: skewX(-30deg, 60deg);
+	-o-transform: skewX(-30deg, 60deg);
+	transform: skewX(-30deg, 60deg);
+}
