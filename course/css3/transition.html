@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="css/transition.css">
+	<title>CSS3动画-过度</title>
+</head>
+<body>
+	<div class="div1" id="div"></div>
+	<button id="btn">开始</button>
+</body>
+<script type="text/javascript">
+	
+
+	document.getElementById("btn").onclick = start;
+
+	function start(argument) {
+		var div = document.getElementById("div"),
+		    preClassStr = div.getAttribute("class");
+		div.setAttribute("class", preClassStr+" div2");
+	}
+
+</script>
+</html>

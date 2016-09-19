@@ -1,0 +1,24 @@
+.newspaper{
+	-webkit-column-count: 4;
+	-moz-column-count: 4;
+	-o-column-count: 4;
+	column-count: 4;
+	-webkit-column-rule: 4px inset red;
+	-moz-column-rule: 4px inset red;
+	-o-column-rule: 4px inset red;
+	column-rule: 4px inset red;
+}
+.container{
+	-webkit-column-width: 250px;
+	-moz-column-width: 250px;
+	-o-column-width: 250px;
+	column-width: 250px;
+	-webkit-column-gap: 10px;
+	-moz-column-gap: 10px;
+	-o-column-gap: 10px;
+	column-gap: 10px;
+}
+.container > div{
+	width: 250px;
+	margin: 5px 0;
+}

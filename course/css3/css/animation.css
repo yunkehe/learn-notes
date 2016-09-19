@@ -28,3 +28,33 @@ div{
 	-o-transform: skewX(-30deg, 60deg);
 	transform: skewX(-30deg, 60deg);
 }
+
+.div3{
+	position: relative;
+	animation: anim 5s infinite;
+}
+@keyframes anim{
+	0%{
+		left: 0;
+		top: 0;
+	}
+	25%{
+		left: 100px;
+		top: 0;
+		background-color:red;
+	}
+	50%{
+		left: 100px;
+		top: 100px;
+		background-color: aqua;
+	}
+	75%{
+		left: 0;
+		top: 100px;
+		background-color: green;
+	}
+	100%{
+		left: 0;
+		top: 0;
+	}
+}

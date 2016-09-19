@@ -1,0 +1,16 @@
+.div1{
+	width: 100px;
+	height: 100px;
+	background-color: skyblue;
+	-webkit-transition: width 2s, height 2s, transform 2s;
+	-o-transition: width 2s, height 2s, transform 2s;
+	transition: width 2s, height 2s, transform 2s;
+}
+.div2{
+	width: 200px;
+	height: 200px;
+	-webkit-transform: rotate(360deg);
+	-ms-transform: rotate(360deg);
+	-o-transform: rotate(360deg);
+	transform: rotate(360deg);
+}
