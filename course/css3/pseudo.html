@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>伪类和伪元素</title>
+	<style type="text/css">
+
+		/*p::first-letter{
+			color:blue;
+		}*/
+		/*p.first::first-line{
+			font-weight: bold;
+		}*/
+		.red{
+			color: red;
+		}
+		:root{
+			background-color: #dedede;
+		}
+		/*body{
+			background-color: skyblue;
+		}*/
+		.not{
+			font-family: "Arial";
+		}
+		.not p, 
+		.not h5{
+			color: red;
+		}
+		
+		.not p::first-letter{
+			font-size: 26px;
+			color: blue;
+		}
+		#div p span.first-letter{
+			color:green;!important;
+			font-size: 14px;
+		}
+
+		#p1.hover{
+			color: red;
+		}
+		#p1:hover{
+			color: yellow;
+		}
+
+		:target{
+			background-color: lime;
+		}
+
+	</style>
+</head>
+<body>
+	<p class="first">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+	proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	<h4>如果设置了:root 则body只对内容区域生效</h4>
+	<p class="hover" id="p1">伪类用一个冒号</p>
+	<p>伪元素用两个冒号</p>
+	<p>伪类可以通过添加一个类来实现，而伪元素必须通过添加一个元素来实现。</p>
+	<p>伪元素有四个:</p>
+	<ul>
+		<li>::first-line</li>
+		<li>::first-letter</li>
+		<li>::before</li>
+		<li>::after</li>
+	</ul>
+	<h4>结构性伪类选择器</h4>
+	<p class="red">伪元素选择器优先级最高。</p>
+	<div class="not" id="div">
+		<h5>测试:not</h5>
+		<p><span class="first-letter">重</span>I'm not in it!</p>
+	</div>
+	<h4>:target页内跳转样式</h4>
+	<a href="#a1">菜单1</a>
+	<a href="#a2">菜单2</a>
+	<ul>
+		<li id="a1">
+			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation </p>
+		</li>
+		<li id="a2">
+			<p>
+				ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+			</p>
+		</li>
+	</ul>
+</body>
+</html>
