@@ -1,0 +1,15 @@
+p{
+	text-shadow: 5px 5px 5px skyblue;
+	font-family: 宋体;
+	font-size: 28px;
+}
+.p1{
+	font-family: cursive;
+}
+.p2{
+	font-family: Arial;
+	font-size-adjust: 0.55;
+}
+.p3{
+	font-family: "Microsoft Yahei";
+}
