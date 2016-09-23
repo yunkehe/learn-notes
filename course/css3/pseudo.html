@@ -11,6 +11,9 @@
 		/*p.first::first-line{
 			font-weight: bold;
 		}*/
+		.first{
+			color:rgb(0, 128, 0);
+		}
 		.red{
 			color: red;
 		}
@@ -33,8 +36,8 @@
 			color: blue;
 		}
 		#div p span.first-letter{
-			color:green;!important;
-			font-size: 14px;
+			color:green !important;
+			font-size: 14px ;
 		}
 
 		#p1.hover{
@@ -51,7 +54,7 @@
 	</style>
 </head>
 <body>
-	<p class="first">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+	<p class="first second">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 	tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
 	quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
 	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
@@ -72,7 +75,7 @@
 	<p class="red">伪元素选择器优先级最高。</p>
 	<div class="not" id="div">
 		<h5>测试:not</h5>
-		<p><span class="first-letter">重</span>I'm not in it!</p>
+		<p id="test"><span class="first-letter">重</span>I'm not in it!</p>
 	</div>
 	<h4>:target页内跳转样式</h4>
 	<a href="#a1">菜单1</a>

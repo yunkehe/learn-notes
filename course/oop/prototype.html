@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	
+</body>
+<script type="text/javascript">
+
+(function(root){
+
+	var privacy = "privacy variable";
+
+	function Person(name){
+		this.name = name;
+	};
+
+	Person.prototype.say = function(){
+		alert("Person say : name: "+ this.name);
+	};
+
+	root.Person = Person;
+
+}(window));
+
+(function(root){
+	var Person = root.Person;
+
+	var privacy = "privacy variable";
+	
+	function Student(name){
+		this.name = name;
+	};
+
+	Student.prototype = new Person();
+
+	Student.prototype.say = function(){
+		alert("Student say : name: "+ this.name);
+	};
+
+	root.Student = Student;
+
+}(window));	
+
+	var student = new Student();
+	
+</script>
+</html>
