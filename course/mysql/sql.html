@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>约束和修改数据</title>
+	<!-- 新 Bootstrap 核心 CSS 文件 -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap.min.css">
+
+	<!-- 可选的Bootstrap主题文件（一般不用引入） -->
+	<link rel="stylesheet" href="http://cdn.bootcss.com/bootstrap/3.3.0/css/bootstrap-theme.min.css">
+
+	<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+	<script src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js"></script>
+
+	<!-- 最新的 Bootstrap 核心 JavaScript 文件 -->
+	<script src="http://cdn.bootcss.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+	<div class="container">
+		<h2>mysql常用查询</h2>
+		<p>查看数据库中是否有某个名字的表<code>SHOW TABLES LIKE '%tablename%'</code></p>
+	
+		<h4>删除数据表</h4>
+		<p><code>drop table tblname;</code></p>
+		<h4>插入数据</h4>
+		<p><code>insert into tbl_name (id, name) values(1, "heke");</code></p>
+		<h4>where子句不区分大小写where binary区分大小写</h4>
+		<h4>update修改更新数据</h4>
+		<p><code>update tbl_name set name="yunkehe" where id=1;</code></p>
+		<h4>删除记录</h4>
+		<p><code>delete from tbl_name where name="frank"; </code></p>
+	</div>
+
+</body>
+</html>
