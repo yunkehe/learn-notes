@@ -30,6 +30,22 @@
 		<p><code>update tbl_name set name="yunkehe" where id=1;</code></p>
 		<h4>删除记录</h4>
 		<p><code>delete from tbl_name where name="frank"; </code></p>
+		<h4>like语句,获取以<code>frank</code>结尾的记录</h4>
+		<p><code>select * from tbl_name where name like "%frank";</code></p>
+		<h4>排序, asc/desc</h4>
+		<p><code>select * from tbl_name oreder by id;</code></p>
+		<h4>分组</h4>
+		<p><code>select name, count(*) from employee_tbl group by name;</code>
+			<br>
+			<code>select name, sum(singin) as single_count from employee_tbl group by name with rollup;</code>
+			<br>
+			<code>select coalesce(name, "总数"), sum(singin) as single_count from employee_tbl group by name with rollup;</code>
+		</p>
+
+		<h4>多表联查</h4>
+		<p>join
+			<code>select a.id, a.name, b.count from tbl_a a join tbl_b b on a.name = b.name;</code>
+		</p>
 	</div>
 
 </body>
