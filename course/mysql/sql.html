@@ -45,7 +45,18 @@
 		<h4>多表联查</h4>
 		<p>join
 			<code>select a.id, a.name, b.count from tbl_a a join tbl_b b on a.name = b.name;</code>
+			<br>
+			左联结
+			<code>SELECT a.runoob_id, a.runoob_author, b.runoob_count FROM runoob_tbl a LEFT JOIN tcount_tbl b ON a.runoob_author = b.runoob_author;</code>
+			<br>
+			右联结
+			<code>SELECT a.runoob_id, a.runoob_author, b.runoob_count FROM runoob_tbl a INNER JOIN tcount_tbl b ON a.runoob_author = b.runoob_author</code>
 		</p>
+
+		<h4>is null/is not null;</h4>
+		<h4>mysql正则表达式REGEXP</h4>
+
+		<h4>alter table tbl_name add/drop/modify 字段名</h4>
 	</div>
 
 </body>
