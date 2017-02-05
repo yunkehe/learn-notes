@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="../static/js/jquery.min.js"></script>
+</head>
+<body>
+</body>
+<script>
+	var cb = {
+		callback: function(data){
+			console.log('callback', data);
+		}
+	};
+	// window.callback = cb.callback;
+	// var oReq = new XMLHttpRequest();
+	
+	// // 发送请求
+	// oReq.open("get", "http://apis.juhe.cn/idcard/index?key=bd5dce7ffc20ff11854e8fee08e653a2&cardno=511324199005131691", true);
+
+	// oReq.onload = function(a, b, c, d){
+	// 	console.log('返回', this, arguments);
+	// 	console.log(this.responseText);
+	// 	var result = this.responseText;
+	// 	// 使用
+	// };
+
+	// oReq.send();
+	window.callback
+	var url = "http://apis.juhe.cn/idcard/index?key=bd5dce7ffc20ff11854e8fee08e653a2&cardno=511324199005131691";
+	var ip = 'http://apis.juhe.cn/ip/ip2addr?ip=www.juhe.cn&key=appkey';
+	// var url = 'model/test.php';
+	// var url = 'http://192.168.41.133/ajax/model/test.php';
+	// var url = 'http://www.google.com/api/?q=json/ebag/HomeworkCorrecting/getUserNoMarked&info={%22userid%22:287621}';
+
+
+	// $.ajax({
+	// 	'url': url,
+	// 	'dataType': 'jsonp',
+	// 	'success': function(data){
+	// 		console.log(data);
+	// 	}
+	// })	            
+
+	var httpRequest;
+
+	  function makeRequest(url) {
+
+	  	// 创建一个XMLHttpRequest对象
+	    httpRequest = new XMLHttpRequest();
+	    // IE老版本使用如下方式
+	    //  httpRequest = new ActiveXObject("Microsoft.XMLHTTP");
+
+	    // 判断XMLHttpRequest对象是否存在 不存在 说明当前浏览器不支持用XMLHttpRequest对象
+
+	    if ( !httpRequest ) {
+	      alert('Giving up :( Cannot create an XMLHTTP instance');
+	      return false;
+	    }
+
+	    // 打开一个请求 参数 1.请求方法 2.请求的地址 3. 是否异步（默认为true，表示异步，可不填）
+	    httpRequest.open('GET', url);
+        httpRequest.setRequestHeader('Content-Type', 'application/xml');
+	    // 绑定当前请求更改时调用的函数
+	    httpRequest.onreadystatechange = alertContents;
+
+	    // 发送请求
+	    httpRequest.send();
+
+	  }
+
+	  // 回调函数
+	  function alertContents() {
+	  	// 用readyState的值检查请求的状态 
+	  	// 0 (未初始化)
+		// 1 (正在加载)
+		// 2 (加载完毕)
+		// 3 (交互中)
+		// 4 (完成)
+	    if (httpRequest.readyState === XMLHttpRequest.DONE) {
+
+	    	// 用status的值来检查http服务的状态 (具体参考http状态码)
+	      if (httpRequest.status === 200) {
+	      	// responseText  以文本字符串形式返回服务器响应
+	      	// responseXML – 将响应作为XMLDocument对象返回，您可以使用JavaScript DOM函数遍历
+	      	console.log('httpRequest: ', httpRequest.responseText);
+	      	// console.log('responseText: ', JSON.parse(httpRequest.responseText));
+	        // alert(httpRequest.responseText);
+
+	        // 执行其他操作
+	        
+	      } else {
+	        alert('There was a problem with the request.');
+	      }
+
+	    }
+	  }
+
+
+	  // makeRequest(url);
+	  // dosomething();
+
+	  // script src跨域
+	  function getJSON(url, callback){
+
+	  		var script = document.createElement('script');
+	  		script.type = 'text/javascript';
+	  		script.src = url+'&callback='+callback;
+
+	  		document.getElementsByTagName('head')[0].appendChild(script);
+
+	  		script.onload = function(d){
+	  			document.getElementsByTagName('head')[0].removeChild(script);
+	  		};
+	  }
+
+	  // 为什么回调会触发两次?
+	  // 服务端做了处理
+	  function callback(data){
+	  	console.log('callback data', data);
+	  };
+
+	  getJSON(url, 'callback');
+
+</script>
+</html>
