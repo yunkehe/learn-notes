@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>指令</title>
+	<script type="text/javascript" src="lib/angular-1.3.0.js"></script>
+</head>
+<body ng-app="directiveApp">
+	<div>
+		<hello></hello>
+		<div hello>属性</div>
+		<div class="hello">类</div>
+		<!-- directive: hello 两端需要加空格 -->
+	</div>
+</body>
+<script type="text/javascript">
+	var directiveApp = angular.module('directiveApp', []);
+
+	directiveApp.directive('hello', function(){
+			return {
+				restrict: 'AEMC',
+				// template: '<h2>Hello, Angular!</h2>',
+				templateUrl: 'tpls/directive.tpl.html',
+				replace: true
+			}
+		});
+
+</script>
+</html>
