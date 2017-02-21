@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>独立指令</title>
+	<script type="text/javascript" src="lib/angular-1.3.0.js"></script>
+</head>
+<body ng-app="singleDirective">
+	<div ng-controller="singleCtrl">
+		<hello></hello>
+		<hello></hello>
+		<hello></hello>
+		<hello></hello>
+	</div>
+
+	<div ng-controller="flavorCtrl">
+		controller:
+		<br>
+		<input type="text" name="" ng-model="ctrlFlavor" />
+		<br>
+		directive:
+		<br>
+		<drink flavor="ctrlFlavor"></drink>
+	</div>
+
+	<div ng-controller="funCtrl">
+		<greeting greet="sayHello(name)"></greeting>
+	</div>
+</body>
+<script type="text/javascript">
+	var singleApp = angular.module('singleDirective', []);
+
+	singleApp.controller('singleCtrl', ['$scope', function($scope){
+		// $scope.greet = {
+		// 	text: ''
+		// };
+	}]);
+
+	singleApp.directive('hello', function () {
+		return {
+			restrict: 'AE',
+			// 独立scope
+			scope: {},
+			template: '<div><input type="text" ng-model="username" /><span>{{username}}</span><div>',
+			replace: true
+		}
+	});
+
+	singleApp.controller('flavorCtrl', ['$scope', function($scope){
+		$scope.ctrlFlavor = '菩提';
+	}]);
+
+	singleApp.directive('drink', function(){
+		return {
+			restrict: 'AE',
+			scope: {
+				// <drink flavor="ctrlFlavor"></drink>
+				// scope.flavor = $scope.ctrlFlavor
+				flavor: '='
+			},
+			// template: '<div>{{flavor}}<div>',
+			template: '<input type="text" ng-model="flavor" />',
+
+			// link: function(scope, element, attrs){
+			// 	scope.flavor = attrs.flavor;
+			// }
+		}
+	})
+
+	singleApp.controller('funCtrl', ['$scope', function($scope){
+		$scope.sayHello = function(name){
+			console.log('arguments', arguments)
+			alert('This is '+name);
+		};
+	}]);
+
+	singleApp.directive('greeting', function(){
+		return {
+			restrict: 'AE',
+			scope: {
+				// 绑定函数
+				greet: '&'
+			},
+			// ng-click 里面需要用对象的方式传递参数
+			template: '<div><input type="text" ng-model="username" />\
+				<button ng-click="greet({name: username})">点击</button>\
+			</div>'
+		}
+	});
+</script>
+</html>
