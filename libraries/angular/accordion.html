@@ -7,7 +7,14 @@
 </head>
 <body ng-app="accordionApp">
 	<div ng-controller="accordionCtrl">
-		<expander show='expand(isShow)'></expander>
+		<expander></expander>
+	</div>
+	
+	<br>
+
+	<div ng-controller="expandCtrl">
+		<div ng-click="expand(enabeShow)">点击</div>
+		<div ng-show="enabeShow">这里是隐藏的内容。</div>
 	</div>
 </body>
 <script type="text/javascript" src="js/accordion.js"></script>

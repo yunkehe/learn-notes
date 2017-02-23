@@ -67,6 +67,13 @@
 		}
 	})
 
+
+	// <div ng-controller="funCtrl">
+	// 	<greeting greet="sayHello(name)"></greeting>
+	// </div>
+	
+	// 第一个参数， controller的名称
+	// 第二个参数， 是一个数组， 依次传入依赖模块
 	singleApp.controller('funCtrl', ['$scope', function($scope){
 		$scope.sayHello = function(name){
 			console.log('arguments', arguments)
@@ -74,6 +81,8 @@
 		};
 	}]);
 
+	// first param: the directive's name,
+	// second param: the directive's 
 	singleApp.directive('greeting', function(){
 		return {
 			restrict: 'AE',
