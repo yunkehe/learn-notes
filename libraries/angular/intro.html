@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="lib/angular-1.3.0.js"></script>
+</head>
+<body ng-app="myapp">
+	<input type="text" ng-model="greeting.text" />
+	<p>{{greeting.text}}, Angular!</p>
+	<hello></hello>
+
+	<div class="show-scope-demo">
+		<div ng-controller="GreetCtrl">
+			$scope, {{name}}
+		</div>
+		<div ng-controller="ListCtrl">
+			<ol>
+				<li ng-repeat="name in names">{{name}} from {{department}}</li>
+			</ol>
+		</div>
+	</div>
+</body>
+	<script>
+		var app = angular.module('myapp', []);
+
+		// 指令实现视图层
+		app.directive('hello', function(){
+			return {
+				restrict: 'E',
+				template: '<div>Hello Directive!</div>',
+				replace: true
+			}
+		});
+
+		app.controller('GreetCtrl', function ($scope, $rootScope) {
+			// body...
+			$scope.name = '第一层$scope';
+			$rootScope.department = '第二层$rootScope';
+		});
+
+		app.controller('ListCtrl', function ($scope) {
+			$scope.names = ['John', 'Steve', 'Tom'];
+		})
+
+	</script>
+</html>
