@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue教程</title>
+	<link rel="stylesheet" href="../../static/css/bootstrap.css">
+	<script src="../../static/js/vue-2.2.4.js"></script>
+</head>
+<body>
+	<ul id="example-1">
+	  <template v-for="item in items">
+	    <li>{{ item.msg }}</li>
+	    <li class="divider"></li>
+	  </template>
+	</ul>
+
+	<!-- 整数迭代 -->
+	<div>
+	  <span v-for="n in 10">{{ n }}</span>
+	</div>
+</body>
+<script src="js/render.js"></script>
+</html>
