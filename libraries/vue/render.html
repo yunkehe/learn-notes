@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<title>vue教程</title>
 	<link rel="stylesheet" href="../../static/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
 	<script src="../../static/js/vue-2.2.4.js"></script>
 </head>
 <body>
@@ -33,9 +34,11 @@
 		</div>
 	</div>
 	<!-- 用于列表渲染时排序 -->
-	<div v-for="item in items" :key="item.id">
+	<div v-for="item in items" :key="item.id" @click="doSomething">
 	  <!-- 内容 -->
 	</div>
+
+	<div id="example-2" class="bg-blue" @click="doSomething">{{a}}</div>
 </body>
 <script src="js/render.js"></script>
 </html>
