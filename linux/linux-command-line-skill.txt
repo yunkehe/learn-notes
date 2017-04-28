@@ -2,3 +2,43 @@ linux命令技巧
 
 创建一个新文件(利用重定向)
 > newfile
+
+连接多个文件file01.js,file02.js,file03.js...
+`cat file0*.js > file.js`
+
+grep命令的用法(正则匹配)
+`ls l /usr/bin | sort | uniq | grep zip`
+
+输出当前工作目录的所有文件名
+`echo *`
+
+查找历史输入命令，
+`history`
+利用行号再次执行
+`!23`
+查找历史输入命令
+`Ctrl + r`
+复制找到的历史命令到当前命令
+`Ctrl + j`
+
+文件属性
+owner group world
+rwx   rwx   r-x
+文件权限代号
+`
+0 000 ---
+1 001 --x
+2 010 -w-
+3 011 -wx
+4 100 r--
+5 101 r-x
+6 110 rw-
+7 111 rwx
+`
+
+查看系统进程
+ps aux
+Process States
+
+查看进程状态
+top

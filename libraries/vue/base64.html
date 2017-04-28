@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue教程</title>
+	<link rel="stylesheet" href="../../static/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script src="../../static/js/vue-2.2.4.js"></script>
+</head>
+<body>
+	<ul id="example-1">
+	  <template v-for="item in items">
+	    <li>{{ item.msg }}</li>
+	    <li class="divider"></li>
+	  </template>
+	</ul>
+	
+	<div class="container">
+		<div class="row">
+			
+		<p>以下数组方法会触发视图更新</p>
+		<code>
+			push()
+			pop()
+			shift()
+			unshift()
+			splice()
+			sort()
+			reverse()
+		</code>
+		</div>
+		<div class="row">
+			<p> Vue 实现了一些智能启发式方法来最大化 DOM 元素重用，所以用一个含有相同元素的数组去替换原来的数组是非常高效的操作。</p>
+		</div>
+	</div>
+	<!-- 用于列表渲染时排序 -->
+	<div v-for="item in items" :key="item.id" @click="doSomething">
+	  <!-- 内容 -->
+	</div>
+	<img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAAkCAYAAABIdFAMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAHhJREFUeNo8zjsOxCAMBFB/KEAUFFR0Cbng3nQPw68ArZdAlOZppPFIBhH5EAB8b+Tlt9MYQ6i1BuqFaq1CKSVcxZ2Acs6406KUgpt5/LCKuVgz5BDCSb13ZO99ZOdcZGvt4mJjzMVKqcha68iIePB86GAiOv8CDADlIUQBs7MD3wAAAABJRU5ErkJggg%3D%3D"/>
+	<div id="example-2" class="bg-blue" @click="doSomething">{{a}}</div>
+</body>
+<script src="js/render.js"></script>
+</html>
