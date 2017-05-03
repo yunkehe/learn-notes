@@ -42,3 +42,39 @@ Process States
 
 查看进程状态
 top
+
+vi編輯快捷鍵
+命令模式下：
+b 上一個單詞
+w 下一個單詞
+^ 跳轉到一行開始
+0 跳轉到一行開始
+$ 跳轉到一行結束
+A 跳轉到一行結束並且進入編輯模式
+Ctrl + f === Page down
+Ctrl + b === Page up
+數字 + G 跳轉到指定行
+G 跳轉到最後一行
+數字 + j 往下移動指定行
+u 撤銷上一次的操作(undo)
+a 在光標位置添加文本
+
+o  ]open a line below the current line.
+o  ]open a line above the current line.
+
+x     刪除當前字符
+2x    刪除當前字母和後面的兩個字符
+dd    刪除當前行
+3dd   刪除當前行和後面的3行
+
+y    等價于複製
+d    等價于剪切
+p    等價于粘貼
+
+/ + 要搜索的字符
+n 跳轉到下一個搜索匹配項
+
+:buffers 查看打開的多個文檔
+:e 再打開一個文件
+:buffer 數字    通過buffer number打開新文件
+:r test.txt     讀取test.txt文檔到當前光標
