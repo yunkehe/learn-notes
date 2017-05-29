@@ -78,3 +78,40 @@ n 跳轉到下一個搜索匹配項
 :e 再打開一個文件
 :buffer 數字    通過buffer number打開新文件
 :r test.txt     讀取test.txt文檔到當前光標
+
+free 
+查看内存使用详情
+
+tail - f /var/log/messages
+查看系统正在干嘛
+
+### 磁盘操作
+fdisk    磁盘分区工具 
+fdisk /dev/vda1  开始分配/dev/vda1
+h    帮助
+m    菜单
+p    打印分区表
+fsck    文件系统检测
+
+### 网络
+traceroute 追踪路由
+ip 代替ifconfig使用 
+netstat 网络状态
+netstat -ie 检测本机ifconfig
+ftp 
+lftp  (a better ftp)
+wget 下载文件/网站的工具
+ssh  (Secure Shell)
+ssh fanliang@localhost    使用用户名fanliang连接localhost
+ssh localhost free    利用ssh远程执行命令
+
+
+
+
+
+
+
+
+
+
+
