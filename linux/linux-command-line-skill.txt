@@ -123,11 +123,28 @@ find ~ -type -name "*.txt" -delete
 find ~ -type f -name "*.txtt" -ok ls -l '{}' ';'
 找到文件后执行命令，执行前提示确认操作
 
+gunzip -c foo.txt.gz | less
 
+tar    文档归类
+tar cf playground.tar playground
+归类   自定义命名     源文件
+tar tf playground.tar
+列出归类文档
 
+find playground -name 'file-a' -exec tar tf playground.tar '{}' '+'
+在playground文件夹中找到文件名为file-a的文件 然后执行归档
 
+zip
+zip -r playground.zip playground/
+递归压缩playground/(包含内部文件)成一个playground.zip的压缩包
 
+unzip -l ../playground.zip playground/dir-087/file-z
 
+rsync options source destination
+同步文件和文件夹
 
+rsync -av playground/ foo
+复制playground/到foo/
 
-
+sudo rsync -av --delete /etc /home /usr/local /media/bigStock/backup
+拷贝/etc /home /usr /local下的文件到 /media/bigStock/backup文件夹下，如果目标文件夹已经存在相同文件则删除
