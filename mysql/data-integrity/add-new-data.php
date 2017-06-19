@@ -13,7 +13,8 @@
     "update t_new_friend set phone_num=110 where name='hke';";
 
     // 更新多列数据
-    "update student set grade=1 where age<=10;"
+    "update student set grade=1 where age<=10;";
 
     // 删除数据
+    "delete from student where name='heke';";
  ?>

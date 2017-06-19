@@ -148,3 +148,16 @@ rsync -av playground/ foo
 
 sudo rsync -av --delete /etc /home /usr/local /media/bigStock/backup
 拷贝/etc /home /usr /local下的文件到 /media/bigStock/backup文件夹下，如果目标文件夹已经存在相同文件则删除
+
+## regular expressions
+grep -l bzip dirlist*.txt    匹配dirlist*.txt这几个文件中满足 bzip 表达式的文件
+grep -L bzip dirlist*.txt    匹配dirlist*.txt这几个文件中不满足 bzip 表达式的文件
+
+grep -h '.zip' dirlist*.txt    
+结果不显示文件名字
+
+/usr/share/dict/words
+linux 系统自带的字典有98500个单词
+
+grep -i '^..j.r$' /usr/share/dict/words
+第三个字母是j最后一个字母是r，玩填字游戏可以用这个来匹配

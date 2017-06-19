@@ -20,8 +20,7 @@
         <code>ALTER TABLE tb1 ADD/MODIFY/DROP column_name conditions;</code>
     </p>
     <?php 
-        
+                    
      ?>
-    
 </body>
 </html>
