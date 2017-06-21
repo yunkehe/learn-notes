@@ -23,5 +23,10 @@
     "CONSTRAINT fid_fk FOREIGN KEY(friend_id) REFERENCES t_friend(friend_id)";
 
     // 对已经存在的表修改数据完整性 需要使用名字
-    // 
+    
+    // 删除一张表前
+    // 禁用外键约束
+    "SET FOREIGN_KEY_CHECKS = 0;";
+    // 启用外键约束
+    "SET FOREIGN_KEY_CHECKS = 1;";
  ?>

@@ -59,6 +59,7 @@ Ctrl + f === Page down
 Ctrl + b === Page up
 數字 + G 跳轉到指定行
 G 跳轉到最後一行
+gg  move to
 數字 + j 往下移動指定行
 u 撤銷上一次的操作(undo)
 a 在光標位置添加文本
@@ -161,3 +162,31 @@ linux 系统自带的字典有98500个单词
 
 grep -i '^..j.r$' /usr/share/dict/words
 第三个字母是j最后一个字母是r，玩填字游戏可以用这个来匹配
+
+## extended regular expressions 
+echo "BBB" | grep -E 'AAA|BBB'
+match AAA or BBB
+
+echo "This is" | grep -E '([[:alpha:]]+ ?)+'
+match alphat one or more times and space zero or one time.
+
+locate --regex 'bin/(bz|gz|zip)'
+
+zgrep -El 'regex|regular expression' *.gz
+read compressed files
+
+## Text Processing
+cat -ns foo.txt
+压缩多个空行
+
+sort > foo.txt
+每行依次输入 b a c 会被保存为 a b c 
+
+ll | sort -nr -k 5 | head
+指定按第五列来排序
+
+sort --key=1,1 --key=2n distros.txt
+指定第一列和第二列排序范围
+
+du -s /usr/share/* | sort -nr | head
+列出前十个使用量最大的文件
