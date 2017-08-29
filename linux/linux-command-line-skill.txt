@@ -1,5 +1,8 @@
 linux命令技巧
 
+## 管理用户
+adduser 添加新用户 同时在home中添加用户家目录
+
 创建一个新文件(利用重定向)
 > newfile
 touch dir/file-{A..Z}
@@ -190,3 +193,38 @@ sort --key=1,1 --key=2n distros.txt
 
 du -s /usr/share/* | sort -nr | head
 列出前十个使用量最大的文件
+
+    SUSE    10.2    12/07/2007
+sort -k 3.7nb
+按年排序范围
+
+sort -t ':'  /etc/passwd | head
+自定义排序分界符
+
+sort abc.txt | uniq
+sort -u abc.txt
+remove the dumplicated
+
+sort abc.txt | uniq -c 
+显示重复了多少次
+
+cut -f 3 distros.txt
+只输出显示文档第三列
+
+cut -f 3 distros.txt | cut -c 7-10
+截取第一次输出的 12/02/2008  第7-10个字符
+
+du -sh ../playground
+只显示playground文件夹的大小，不显示子文件夹
+
+expand distros.txt | cut -c 23-
+显示每一行第23个字符以及之后的字符
+
+cut -d ':' -f 1 /etc/passwd | head
+指定冒号作为分隔符
+
+echo 'hello world' | tr [:lower:] A-Z
+输出HELLO WORLD
+
+sed -n '1,3p' distros.txt
+输出第一到三行的内容

@@ -8,4 +8,5 @@
     "set character_set_results=gb2312;";
     // 查看设置
     " show variables like '%char%';";
+    
  ?>
