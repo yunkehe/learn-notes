@@ -9,11 +9,38 @@
 <body>
 	<div id="app1">
 		<my-component></my-component>
+		<my-component2></my-component2>
 	</div>
 	<table id="tbl1">
 		<tr is="my-component"></tr>
 		<my-component></my-component>
 	</table>
+
+	<div id="example-2">
+	  <simple-counter></simple-counter>
+	  <simple-counter></simple-counter>
+	  <simple-counter></simple-counter>
+	</div>
+	<!-- 父子组件 -->
+	<p>
+		组件设计初衷就是要配合使用的，最常见的就是形成父子组件的关系：组件 A 在它的模板中使用了组件 B。它们之间必然需要相互通信：父组件可能要给子组件下发数据，子组件则可能要将它内部发生的事情告知父组件。然而，通过一个良好定义的接口来尽可能将父子组件解耦也是很重要的。这保证了每个组件的代码可以在相对隔离的环境中书写和理解，从而提高了其可维护性和复用性。
+	</p>
+
+	<div id="parent-and-child">
+	  <input v-model="parentMsg">
+	  <br>
+	  <child v-bind:my-message="parentMsg"></child>
+	</div>
+	<!-- 单独的一个子组件 -->
+	<child message="hello!"></child>
+
+	<div id="counter-event-example">
+	  <p>{{ total }}</p>
+	  <button-counter v-on:increment="incrementTotal"></button-counter>
+	  <button-counter v-on:increment="incrementTotal"></button-counter>
+	  <brother-component></brother-component>
+	</div>
 </body>
-<script src="js/components.js"></script>
+<!-- <script src="js/components.js"></script> -->
+<script src="js/component2.js"></script>
 </html>

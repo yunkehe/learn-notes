@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>vue-组件</title>
+    <script type="text/javascript" src="http://unpkg.com/vue"></script>
+</head>
+<body>
+    <div id="app">
+        <div v-text="parentMsg"></div>
+        <!-- 组件1 -->
+        <my-component1></my-component1>
+        <!-- 组件2 -->
+        <my-component2></my-component2>
+        <!-- 组件3 -->
+        <div id="component"></div>
+        <!-- 挂载组件 -->
+        <div id="globalComponent"></div>
+    </div>
+
+    <script>
+        var myComponent1 = {
+            template: '<div v-text="child-msg"></div>',
+            props: ['childMsg'],
+            data: function(){
+                return {
+                    msg: 'this is a component1!' 
+                }
+            }
+        };
+
+        var myComponent2 = {
+            template: '<div v-text="msg"></div>',
+            data: function(){
+                return {
+                    msg: 'this is a component2!'
+                }
+            }
+        };
+
+        var myComponent3 = {
+            template: '<div v-text="msg"></div>',
+            data: function(){
+                return {
+                    msg: 'this is a component3!'
+                }
+            }
+        };
+
+        // 全局组件
+        var myGlobalComponent = Vue.component('my-component1', myComponent1);
+
+        // 扩展实例的构造器组件
+        var myCmopnentExtend = Vue.extend(myComponent3);
+
+        // 实例化的构造器组件可以自由的绑定在任意元素按上
+        var vc = new myCmopnentExtend().$mount('#component');
+
+        // 创建vm 实例，使用局部组件
+        var vm = new Vue({
+            el: '#app',
+            data: {
+                parentMsg: 'haha'
+            },
+            components: {
+                'myComponent2': myComponent2
+            }
+        });
+
+        // 挂载组件
+        var vb = new myGlobalComponent().$mount('#globalComponent');
+    </script>
+</body>
+</html>

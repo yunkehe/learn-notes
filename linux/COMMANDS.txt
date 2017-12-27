@@ -1,0 +1,8 @@
+﻿常用命令
+
+## SVN相关
+### 提取svn url
+svn info 文件 | grep ^URL > svn.txt
+
+### 对比svn改动路径
+svn diff -r 222255:HEAD --summarize svn://192.168.43.251/nlsp/branches/dev-yii/www/ebag/iclass > change.txt
