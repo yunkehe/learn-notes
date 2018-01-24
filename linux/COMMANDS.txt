@@ -5,7 +5,7 @@
 svn info 文件 | grep ^URL > svn.txt
 
 ### 对比svn改动路径
-svn diff -r 234535:HEAD --summarize svn://192.168.43.251/nlsp/branches/dev-yii/www/site/js/common/resource/window > js.txt
+svn diff -r 234238:HEAD --summarize svn://192.168.43.251/nlsp/branches/dev-yii/www/ppthelper/ > ppthelperjs.txt
 
 ### grep 排除条件
 svn diff -r 232333:HEAD --summarize svn://192.168.43.251/nlsp/branches/dev-yii/www/ebag/iclass | grep -v '.map' > change.txt
