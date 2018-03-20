@@ -1,0 +1,35 @@
+/* button组件样式 */
+/* 保存 更换教材 */
+button:hover,
+[class^="btn-"]:hover{
+    cursor: pointer;
+}
+.btn-normal{
+    padding: 0 10px;
+    height: 26px;
+    line-height: 24px;
+    font-size: 14px;
+    color: #686868;
+    border: 1px solid #e2e2e2;
+    background-color: #fff;
+}
+.btn-normal:hover{
+    color: #20bf94;
+}
+/* 确定 取消 */
+.btn-big,
+.btn-big-inset{
+    padding: 0 30px;
+    height: 36px;
+    line-height: 36px;
+    border-radius: 4px;
+    border: 1px solid #20bf94;
+    background-color: #20bf94;
+    color: #fff;
+    font-size: 16px;
+}
+.btn-big-inset{
+    border-color: #d3d3d3;
+    background-color: #fff;
+    color: #686868;
+}

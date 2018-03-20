@@ -1,0 +1,48 @@
+ /* 图标大小 统一用i来表示图标 */
+span[class^='icon-'],
+i{
+    cursor: pointer; 
+    text-align: center;
+    display: inline-block;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+}
+/* 控制图标大小 */
+.icon-12{
+    height: 12px;
+    line-height: 12px;
+    width: 12px;
+}
+.icon-15{
+    height: 15px;
+    line-height: 15px;
+    width: 15px;
+}
+.icon-18{
+    height: 18px;
+    line-height: 18px;
+    width: 18px;
+}
+.icon-20{
+    height: 20px;
+    line-height: 20px;
+    width: 20px;
+}
+.icon-22{
+    width: 22px;    
+    height: 22px;
+    line-height: 22px;
+}
+.icon-24{
+    width: 24px;    
+    height: 24px;
+    line-height: 24px;
+}
+.icon-26{
+    width: 26px;    
+    height: 26px;
+    line-height: 26px;
+}
+
+
+

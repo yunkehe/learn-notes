@@ -1,0 +1,117 @@
+/* 定位相关  
+ *   position 简写成 pos
+ *   其他单词简写几乎没有简写 
+*/
+.pos-relative{
+    position: relative;
+}
+.pos-fixed{
+    position: fixed;
+}
+.pos-static{
+    position: static;
+}
+.pos-absolute,
+.cover-parent,
+.cover-horizontal-bottom,
+.cover-horizontal-top,
+.cover-horizontal,
+.cover-vertical,
+.cover-vertical-left,
+.cover-vertical-right,
+.pos-top-left,
+.pos-top-right,
+.pos-bottom-left,
+.pos-bottom-right,
+.pos-y-center, 
+.pos-x-center{
+    position: absolute;
+}
+
+.pos-top-left,
+.pos-top-right{
+    top: 0px;
+}
+.pos-bottom-left,
+.pos-bottom-right{
+    bottom: 0; 
+}
+.pos-top-left,
+.pos-bottom-left{
+    left: 0; 
+}
+.pos-top-right,
+.pos-bottom-right{
+    right: 0; 
+}
+
+/* 垂直居中 */
+.pos-center,
+.horizontal-center,
+.vertical-middle{
+    position: absolute;
+}
+.vertical-middle,
+.vertical-middle-f{
+    top: 50%;
+    transform: translateY(-50%);
+}
+/* 水平居中 */
+.horizontal-center{
+    left: 50%;
+    transform: translateX(-50%);
+}
+.pos-center{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* 浮动行内元素 相对于父元素 上下居中 */
+.vertical-middle-f{
+    position: relative;
+}
+
+/* 运用此种定位的display设为块级元素 */
+.cover-horizontal,
+.cover-horizontal-bottom,
+.cover-horizontal-top,
+.cover-vertical,
+.cover-vertical-left,
+.cover-vertical-right,
+.cover-parent{
+    display: block;  
+}
+/* 水平铺满 */
+.cover-horizontal-bottom,
+.cover-horizontal-top,
+.cover-horizontal{
+    left: 0;
+    right: 0;
+}
+/*水平铺满至底部  top自己设置 */
+.cover-horizontal-bottom{
+    bottom: 0;
+}
+/*水平铺满至顶部  bottom自己设置 */
+.cover-horizontal-top{
+    top: 0;
+}
+.cover-vertical-left,
+.cover-vertical-right,
+.cover-vertical{
+    top: 0;
+    bottom: 0;
+}
+.cover-vertical-left{
+    left: 0;
+}
+.cover-vertical-right{
+    right: 0;
+}
+/* 铺满父级 */
+.cover-parent{
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
