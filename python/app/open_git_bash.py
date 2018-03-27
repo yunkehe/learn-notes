@@ -1,8 +1,9 @@
 #!/usr/local/bin/python3
 
 # 打开git bash
-import os
+import subprocess
 
-git_bash_path = r"C:\Program Files\Git\bin\sh.exe"
+cmd = r'start "C:\Program Files\Git\git-bash.exe"'
 
-# os.system(git_bash_path)
+subprocess.Popen(cmd, shell=True) 
+
