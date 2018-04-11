@@ -15,6 +15,46 @@
 # list.reverse()  倒排列表中的元素。
 # list.copy() 返回列表的浅复制，等于a[:]。
 
-vec = [2, 4, 6];
-vec2 = [x*2 for x in vec];
-print('vec2: ', vec2);
+vec1 = [2, 4, 6];
+vec2 = [4, 3, -9];
+# vec2 = [x*2 for x in vec];
+# vec = [x*2 for x in vec1 if x > 3];
+vec = [x*y for x in vec1 for y in vec2];
+
+print('vec: ', vec);
+
+matrix = [
+    [1, 2, 3, 4],
+    [5, 6, 7, 8],
+    [9, 10, 11, 12],
+];
+
+matrix2 = [[row[i] for row in matrix] for i in range(4)];
+print('matrix2: ', matrix2);
+
+# 集合是一个无序不重复元素的集。基本功能包括关系测试和消除重复元素。
+basket = {'apple', 'orange', 'apple', 'pear', 'orange', 'banana'};
+print('basket: ', basket);
+print('basket: ', 'orange' in basket);
+print('basket: ', 'heke' in basket);
+
+a = set('abracadabra')
+b = set('alacazam')
+a                                  # a 中唯一的字母
+# {'a', 'r', 'b', 'c', 'd'}
+a - b                              # 在 a 中的字母，但不在 b 中
+# {'r', 'd', 'b'}
+a | b                              # 在 a 或 b 中的字母
+# {'a', 'c', 'r', 'd', 'b', 'm', 'z', 'l'}
+a & b                              # 在 a 和 b 中都有的字母
+# {'a', 'c'}
+a ^ b                              # 在 a 或 b 中的字母，但不同时在 a 和 b 中
+# {'r', 'd', 'b', 'm', 'z', 'l'}
+
+# 构造函数 dict() 直接从键值对元组列表中构建字典。如果有固定的模式，列表推导式指定特定的键值对：
+
+dictinary = dict([('sape', 4139), ('guido', 4127), ('jack', 4098)]);
+print('dictinary: ', dictinary);
+
+# 遍历技巧
+# http://www.runoob.com/python3/python3-data-structure.html
