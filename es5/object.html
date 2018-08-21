@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>对象</title>
+</head>
+<body>
+    <h4>对象方法参考</h4>
+    <ul>
+        <li><code>Object.keys</code>不会枚举原型链上的属性。</li>
+    </ul>
+</body>
+<script type="text/javascript">
+    function Shape() {
+        this.x = 0;
+        this.y = 0;
+    }
+
+    Shape.prototype.move = function(x, y) {
+        this.x += x;
+        this.y += y;
+        console.log('Shape move');
+    }
+
+    function Rectancle() {
+        Shape.call(this);
+    }
+
+    Rectancle.prototype = Object.create(Shape.prototype);
+    Rectancle.prototype.constructor = Rectancle;
+
+    var rect = new Rectancle();
+    rect.move(3, 6);
+</script>
+</html>
