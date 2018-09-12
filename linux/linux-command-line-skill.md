@@ -1,14 +1,19 @@
-linux命令技巧
+linux常用命令
 
 ## 管理用户
-adduser 添加新用户 同时在home中添加用户家目录
-
+添加新用户 同时在home中添加用户家目录
+```
+adduser 
+```
 创建一个新文件(利用重定向)
+```
 > newfile
 touch dir/file-{A..Z}
-
+```
 创建文件夹
+```
 mkdir -p dir/dir-{001..100}
+```
 
 连接多个文件file01.js,file02.js,file03.js...
 `cat file0*.js > file.js`
@@ -29,10 +34,12 @@ grep命令的用法(正则匹配)
 `Ctrl + j`
 
 文件属性
-owner group world
-rwx   rwx   r-x
+|用户   |组   |     |    
+- | :-: | -:|
+|owner |group |world|
+|rwx   |rwx   |r-x  |
 文件权限代号
-`
+```
 0 000 ---
 1 001 --x
 2 010 -w-
@@ -41,17 +48,21 @@ rwx   rwx   r-x
 5 101 r-x
 6 110 rw-
 7 111 rwx
-`
+```
+
 
 查看系统进程
+```
 ps aux
 Process States
+```
 
 查看进程状态
 top
 
-vi編輯快捷鍵
-命令模式下：
+## vi編輯快捷鍵
+### 命令模式下：
+```
 b 上一個單詞
 w 下一個單詞
 ^ 跳轉到一行開始
@@ -86,14 +97,15 @@ n 跳轉到下一個搜索匹配項
 :e 再打開一個文件
 :buffer 數字    通過buffer number打開新文件
 :r test.txt     讀取test.txt文檔到當前光標
+```
 
-free 
 查看内存使用详情
+`free` 
 
-tail - f /var/log/messages
 查看系统正在干嘛
+`tail - f /var/log/messages`
 
-### 磁盘操作
+## 磁盘操作
 fdisk    磁盘分区工具 
 fdisk /dev/vda1  开始分配/dev/vda1
 h    帮助
@@ -101,7 +113,7 @@ m    菜单
 p    打印分区表
 fsck    文件系统检测
 
-### 网络
+## 网络
 traceroute 追踪路由
 ip 代替ifconfig使用 
 netstat 网络状态
@@ -228,3 +240,11 @@ echo 'hello world' | tr [:lower:] A-Z
 
 sed -n '1,3p' distros.txt
 输出第一到三行的内容
+
+添加root权限方法
+修改 /etc/sudoers 文件，找到下面一行，在root下面添加一行，如下所示：
+
+## Allow root to run any commands anywhere
+root    ALL=(ALL)     ALL
+yunkehe   ALL=(ALL)     ALL
+
