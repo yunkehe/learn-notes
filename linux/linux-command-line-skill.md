@@ -106,14 +106,23 @@ n 跳轉到下一個搜索匹配項
 `tail - f /var/log/messages`
 
 ## 磁盘操作
-fdisk    磁盘分区工具 
-fdisk /dev/vda1  开始分配/dev/vda1
-h    帮助
-m    菜单
-p    打印分区表
-fsck    文件系统检测
+```
+磁盘分区工具 
+fdisk  
+开始分配/dev/vda1
+fdisk /dev/vda1  
+帮助
+h    
+菜单
+m    
+打印分区表
+p    
+文件系统检测
+fsck    
+```
 
 ## 网络
+```
 traceroute 追踪路由
 ip 代替ifconfig使用 
 netstat 网络状态
@@ -124,8 +133,10 @@ wget 下载文件/网站的工具
 ssh  (Secure Shell)
 ssh fanliang@localhost    使用用户名fanliang连接localhost
 ssh localhost free    利用ssh远程执行命令
+```
 
-### 查找文件
+## 查找文件
+```
 locate bin    查找文件，文件名包含bin
 locate bin | grep zip    查找文件，文件名包含bin，从结果中筛选文件，文件名包含zip
 locate查找不到最近创建的文件，可以用updatedb更新一下
@@ -164,8 +175,10 @@ rsync -av playground/ foo
 
 sudo rsync -av --delete /etc /home /usr/local /media/bigStock/backup
 拷贝/etc /home /usr /local下的文件到 /media/bigStock/backup文件夹下，如果目标文件夹已经存在相同文件则删除
+```
 
 ## regular expressions
+```
 grep -l bzip dirlist*.txt    匹配dirlist*.txt这几个文件中满足 bzip 表达式的文件
 grep -L bzip dirlist*.txt    匹配dirlist*.txt这几个文件中不满足 bzip 表达式的文件
 
@@ -177,8 +190,10 @@ linux 系统自带的字典有98500个单词
 
 grep -i '^..j.r$' /usr/share/dict/words
 第三个字母是j最后一个字母是r，玩填字游戏可以用这个来匹配
+```
 
-## extended regular expressions 
+## extended regular expressions 正则表达式扩展
+```
 echo "BBB" | grep -E 'AAA|BBB'
 match AAA or BBB
 
@@ -243,8 +258,32 @@ sed -n '1,3p' distros.txt
 
 添加root权限方法
 修改 /etc/sudoers 文件，找到下面一行，在root下面添加一行，如下所示：
+```
 
 ## Allow root to run any commands anywhere
+```
+管理员权限修改 /etc/sudoers 增加一行
 root    ALL=(ALL)     ALL
 yunkehe   ALL=(ALL)     ALL
+```
 
+## 系统相关
+```
+查看内核
+uname -a
+
+查看发行版本
+cat /etc/issue
+
+重启服务
+service mysql restart
+
+查看端口
+netstat -an | grep 3306
+```
+
+## 软件包管理工具
+```
+查看将要安装的软件源信息
+apt-cache madison mysql
+```
