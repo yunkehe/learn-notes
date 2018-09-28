@@ -14,4 +14,7 @@
 * 切换显示隐藏文件
 `shift + command + .`
 
+* 终端下打开finder
+`open .`
+
 <font color="skyblue">你好</font>
