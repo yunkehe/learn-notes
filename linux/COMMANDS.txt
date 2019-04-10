@@ -13,4 +13,10 @@ svn diff -r 232333:HEAD --summarize svn://192.168.43.251/nlsp/branches/dev-yii/w
 ### svn 撤销add
 svn revert common.js
 
+## git相关
+新增了一堆文件 未暂存 想要全部清除
+git clean -xdf
+修改了一堆文件 未暂存 想要放弃
+git checkout .
+
 
