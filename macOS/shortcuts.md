@@ -17,4 +17,11 @@
 * 终端下打开finder
 `open .`
 
-<font color="skyblue">你好</font>
+
+* 重命名快捷键 回车
+`return `
+
+* finder内切换tab标签页
+``
+
+[Mac 键盘快捷键苹果官网](https://support.apple.com/zh-cn/HT201236)
