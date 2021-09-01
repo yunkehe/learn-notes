@@ -4,21 +4,22 @@
 	<meta charset="UTF-8">
 	<title>选择器</title>
 	<style type="text/css">
-		div ~ p{
-			background-color: skyblue;
+		p ~ span{
+			color:red;
 		}
 	</style>
 </head>
 <body>
 	<div>
-		<p>这是一个兄弟</p>
-		
-		<div>
-			<p>这是一个兄弟</p>
-			<p>这是一个兄弟</p>
-		</div>
+		<span>这是一个兄弟</span>
+
+		<p>兄弟选择符，位置无须紧邻，只须同层级，A~B 选择A元素之后所有同层级B元素。</p>
+
 		<p>这是一个兄弟</p>
 		<p>这是一个兄弟</p>
+		<span>这是一个兄弟</span>
+		<br>
+		<span>这是一个兄弟</span>
 
 	</div>
 </body>
