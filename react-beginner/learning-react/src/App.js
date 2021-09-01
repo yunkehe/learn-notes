@@ -1,5 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import { createStore } from 'redux';
+
+const store = createStore(reducer, preloadedState, enhancer);
 
 function App() {
   return (

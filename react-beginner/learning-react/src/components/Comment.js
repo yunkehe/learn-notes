@@ -1,4 +1,18 @@
-class Test extends Component {
+import { createStore } from 'redux';
+const reducer = (previousState = 0, action) => {
+	switch (action.type) {
+		case 'LIKE':
+			return previousState + 1;
+		case 'UNLIKE':
+			return previousState - 1;
+		default:
+			return previousState;
+	}
+}
+
+const store = createStore(reducer);
+
+class Comment extends Component {
 	//
 	render() {
 		return <div>
