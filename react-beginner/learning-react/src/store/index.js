@@ -12,4 +12,9 @@ const reducer = (previousState = 0, action) => {
 
 const store = createStore(reducer);
 
+// 订阅
+store.subscribe(() => {
+
+});
+
 export default store;
